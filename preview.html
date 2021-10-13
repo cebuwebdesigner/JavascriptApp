@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>stumblelegalapp</title>
+	<link rel="stylesheet" href="themes/fightcallout.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+    
+    <link rel="stylesheet" href="_assets/css/jqm-demos.css">
+
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    
+
+<!--     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="_assets/css/jqm-demos.css">
+	<script src="js/jquery.js"></script>
+	<script src="_assets/js/index.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>-->
+
+	<style>
+        table { width:100%; border-spacing: 0; }
+        th { text-align:left; }
+        th h3 { margin:.6em 0 .6em .5em; }
+        th, td { vertical-align:top; border-top:1px solid #eee; padding: 1px 3px; background-color:#fcfcfc; }
+        td .ui-btn { margin:.4em 0 .5em 0; }
+        td .ui-btn-inner { padding: .4em 15px; }
+
+		.ui-icon-logo {
+		background-image: url("images/toplogo.png");
+		background-size: 28px 28px; width:15px; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+	}
+	
+	
+	
+	
+	
+	
+	 .ui-btn.ui-icon-courts, .ui-btn.ui-icon-courts:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-courts:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-courts{
+        background-image: url(images/courts.png) !important;
+		background-size: 70px 59px; width:120%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		 .ui-btn.ui-icon-calloutactive, .ui-btn.ui-icon-calloutactive:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-calloutactive:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-calloutactive{
+        background-image: url(images/call-out_active.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		 .ui-btn.ui-icon-callout, .ui-btn.ui-icon-callout:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-callout:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-callout{
+        background-image: url(images/call-out_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+	
+	 .ui-btn.ui-icon-create, .ui-btn.ui-icon-create:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-create:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-create{
+        background-image: url(images/create_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+
+	
+	
+		
+		 .ui-btn.ui-icon-forum, .ui-btn.ui-icon-forum:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-forum:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-forum{
+        background-image: url(images/forum_default.png) !important;
+		background-size: 70px 59px; width:200%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+	
+	
+	 .ui-btn.ui-icon-settings, .ui-btn.ui-icon-settings:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+		background-color: transparent !important;
+
+
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-settings:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-settings{
+        background-image: url(images/settings_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none; 
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+
+
+	
+    </style>
+    
+
+
+<!--mysettings-->
+     <script src="js/iscriptz-function.js"></script>
+	 
+	 
+<!--mysettings-->
+     <script src="js/iscriptz-globalurl.js"></script>
+
+
+<style type="text/css">
+
+
+
+/*.post_image_holder {
+box-sizing: content-box;
+display: block;
+padding: 2px;
+width: 32px;
+height: 32px;
+float: left;
+margin: 0 10px 5px 0;
+border: 1px solid #ccc;
+-moz-box-shadow: 1px 1px 1px #ddd;
+-webkit-box-shadow: 1px 1px 1px #ddd;
+box-shadow: 1px 1px 1px #ddd;
+border-radius: 6px;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+background-color: white;
+}*/
+
+.imgecircle{
+border-radius: 50%; 
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%; margin-left:20px;
+border-radius: 50%;
+	}
+
+</style>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-tap-toggle="false" data-position="fixed" role="banner" class="ui-header ui-bar-inherit">
+			<div style=" width:100%; height:10px">&nbsp;</div>
+           
+        
+           <a href="#" onclick="goBack()" data-transition="flip" style="background-image: url('images/toplogo.png');
+		 width:15px;margin-top:13px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-left ui-icon-logo" >&nbsp;</a>
+   
+   
+   
+   <h1 class="ui-title" role="heading" aria-level="1">FIGHT <br /><span style="font-weight:lighter">CALLOUT</span></h1>
+   
+   
+          
+    
+  
+<!-- <div style="position: fixed;  text-align:right; float:right; width:40%; padding:0px"></div>-->
+ 
+ 
+ 
+<!--  <a href="#" style="position: fixed; background-image: url('images/toplogo.png');
+		 width:15px; margin-right:-10px; margin-top:13px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-right ui-icon-logo">&nbsp;</a>-->
+      
+		
+    
+      <!-- <div style="text-align:right; float:right; width:40%; padding:10px">LATEST</div>  <a href="selection.html" data-transition="flip" style="position: fixed; color:#FFF; background-image: width:15px; margin-right:-10px; margin-top:13px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-right ">&nbsp;</a>-->
+        
+        
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+  
+
+
+
+        
+        
+        
+        
+        
+        
+
+<div data-role="content">   
+
+
+		<div class="content-primary" style="text-align:center">
+  
+<h2 style="padding:0px; margin:0px">BOXING</h2>
+<!--<img src="images/player.jpg" style="width:65%"/>-->
+
+<center> <video style="display:none; width:200px; height:150px" src="" id="largeImage"  controls></video></center>
+    
+            
+            
+          <div data-role="collapsible" data-collapsed="true" data-theme="e" data-content-theme="c">  
+ 
+              
+
+              
+              
+              
+             <h3 class="titleview"><script type="text/javascript">
+					
+					var arraysplit = localStorage['postentrydata'];
+					//alert(arraysplit);
+					var AAA = arraysplit.split(',');
+					var fighterA = AAA[3].split('!!!');
+					var fighterB = AAA[4].split('!!!');
+					var titleview  = 'Call Out '+fighterA[1]+' v '+fighterB[1];
+					document.write(titleview);
+					</script></h3>
+              
+
+            <p class="callouttext"><script type="text/javascript">
+					var arraysplit = localStorage['postentrydata'];
+					var AAA = arraysplit.split(',');
+					var cotext = AAA[2].split('!!!');
+					var callouttext = '<b>Fight Call Out Text:</b><br />'+cotext[1];
+					document.write(callouttext);
+					</script></p>
+            
+
+            
+            <div data-role="collapsible" data-theme="c" data-content-theme="c">
+                    <h3>FIGHT DETAILS</h3>
+                    <p class="calloutdetail">
+                    <script type="text/javascript">
+					var arraysplit = localStorage['postentrydata'];
+					var AAA = arraysplit.split(',');
+					
+                     //var vfields ='username,type,text,fighterA,fighterB,views,percent,date,userid,video,details_date,details_venue,details_broadcast,details_tickets,id';
+ 
+                         var detailsvideo = AAA[9].split('!!!');
+                        
+                        
+                        var imageURI = 'http://calloutadmin.com/media/3gp/'+detailsvideo;
+                        var largeImage = document.getElementById('largeImage');
+                        largeImage.style.display = 'block';
+                        largeImage.src = imageURI;
+                        
+                        
+                        
+                    var detailsdate = AAA[10].split('!!!');
+					var detailsvenue = AAA[11].split('!!!');
+					var detailsbroadcast = AAA[12].split('!!!');
+					var detailstickets = AAA[13].split('!!!');
+					var calloutdetails = detailsdate[1]+'<br>'+detailsvenue[1]+'<br>'+detailsbroadcast[1]+'<br>'+detailstickets[1];
+					document.write(calloutdetails);
+					</script>
+                    </p>
+                    </div>
+                    
+                    <div data-role="collapsible" data-theme="c" data-content-theme="c" id="my-collaspible">
+                    <h3>FORUM</h3>
+                        <p>replies: 5 <br />
+                            <input data-inline="true" onclick="forumconvert()" data-role="button" id="messageid" type="button" value="GO TO CONVERSATION" class="buttlink" /></p>
+                    </div>
+              
+                    <div data-role="collapsible" data-theme="c" data-content-theme="c">
+                    <h3>RESPONDS</h3>
+                    <p>
+                    <textarea data-role="none" style="width:100%; background-color:#ccc"></textarea>
+                    <a data-role="button"  style="margin-top:-5px">SUBMIT</a> 
+                    </p>
+                        
+                    </div>
+              
+              </div>
+            
+<script>
+
+    var hostserver=localStorage['globalurl'];
+		 
+var AAA = localStorage['mySettings'].split(',');
+var auserid = AAA[0].split('!!!'); //userid
+var userid = auserid[1];
+	 
+var url = window.location.href;
+var params = url.split('=');
+var postid = params[1];
+
+var vdatastore = postid+","+userid;//+","+localStorage['addonlocal'];
+var dbnstore = "views,userid";
+var vdbtable = "insert,fco_views,unique2,0,1";//,unique,2
+ $.post(hostserver+"switch.php",
+  {
+    dbtable:vdbtable,
+	datastore:vdatastore,
+	dbnstore:dbnstore
+  },
+  function(data,status){
+	//alert(data);
+	
+    if(status=="success"){
+		}else{
+		alert("Please check your connection and try again");
+		}
+  });
+
+
+		 
+
+		 
+		 
+function thumbsclick(statz){
+	//alert(statz)		 
+var AAA = localStorage['mySettings'].split(',');
+var auserid = AAA[0].split('!!!'); //userid
+var userid = auserid[1];
+	 
+var url = window.location.href;
+var params = url.split('=');
+var postid = params[1];
+
+var vdatastore = postid+",1,"+userid;  //+","+localStorage['addonlocal'];
+
+    if(statz=='up'){
+    var dbnstore = "postid,likes,userid";
+    }
+    
+    if(statz=='down'){
+    var dbnstore = "postid,dislike,userid";
+    }
+    
+    var vdbtable = "insert,fco_likes,unique2,0,2";
+    //var whereit = "postid!!!"+postid+",userid!!!"+userid;
+    
+    //,datawhere:whereit
+    
+  // alert(vdbtable+'***'+vdatastore+'***'+dbnstore);
+    
+ $.post(hostserver+"switch.php",
+  {
+    dbtable:vdbtable,
+	datastore:vdatastore,
+	dbnstore:dbnstore
+  },
+  function(data,status){
+	
+      //alert(data);
+	
+    if(status=="success"){
+		}else{
+		alert("Please check your connection and try again");
+		}
+  });
+
+ }//thumbsend
+		 </script>   
+            
+
+            
+<h4><script type="text/javascript">
+    
+    //var vfields ='username,type,text,fighterA,fighterB,views,percent,date,userid,video,details_date,details_venue,details_broadcast,details_tickets,id';
+    
+					var arraysplit = localStorage['postentrydata'];
+					var AAA = arraysplit.split(',');
+					var cotext = AAA[5].split('!!!');
+					var callouttext = cotext[1];
+					document.write(callouttext);
+					</script> Views</h4>
+<div style="float:left; width:20%">&nbsp;</div>
+<div style="float:left; width:20%; text-align:center"><a hef="#" onclick="thumbsclick('up')"><img src="images/thumbs-up.png" style="width:100%"  /></a><br />Like
+</div>
+<div style="float:left; width:20%"><h2><script type="text/javascript">
+    
+    //var vfields ='username,type,text,fighterA,fighterB,views,percent,date,userid,video,details_date,details_venue,details_broadcast,details_tickets,id';
+    
+					var arraysplit = localStorage['postentrydata'];
+					var AAA = arraysplit.split(',');
+					var cotext = AAA[6].split('!!!');
+					var callouttext = cotext[1];
+					document.write(callouttext);
+					</script>%</h2></div>
+<div style="float:left; width:20%; text-align:center"><a hef="#" onclick="thumbsclick('down')"><img src="images/thumbs-down.png" style="width:100%"  /></a><br />Dislike</div>
+<div style="float:left; width:20%">&nbsp;</div>
+<br style="clear:both">&nbsp;<br style="clear:both">&nbsp;<br style="clear:both">
+
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "a86f2ccf-6308-4a82-81bf-7a49be35a9c2", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+<span class='st_facebook_large' displayText='Facebook'></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class='st_googleplus_large' displayText='Google +'></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class='st_instagram_large' displayText='Instagram Badge' st_username='fightcallout'></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class='st_twitter_large' displayText='Tweet'></span>
+
+
+
+
+</div>
+</div>
+
+
+
+
+<div data-role="footer"  data-tap-toggle="true" data-position="fixed" class="ui-footer ui-bar-a ui-footer-fixed slideup" role="banner" style="height:65px; font-size:27px;  background:#000; position:fixed;">
+
+<!-- url(images/footerbg.png)<div style="width:20%; text-align:center; float:left; padding-top:2px; font-size:12px; background:url(images/footeractive.png) no-repeat center top">
+     
+
+   <a href="#" onClick="courtlink()"><button id="saveFileBtn" data-iconpos="center" data-icon="courts" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>-->
+     
+      <div style="width:25%; text-align:center; float:left; font-size:12px"><a onClick="calloutlink()" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="calloutactive" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+
+       <div style="width:25%; text-align:center; float:left; font-size:12px"><a href="create.html" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="create" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+
+        <div style="width:25%; text-align:center; float:left; font-size:12px"><a onClick="forumlink()"  target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="forum" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+
+    <div style="width:25%; text-align:center; float:left; font-size:12px"><a href="settings.html" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="settings" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+
+    	</div>
+
+</div>
+ 
+ <script>
+       
+/*var arraysplit = localStorage['postentrydata'];
+var AAA = arraysplit.split(',');
+//'username,type,text,fighterA,fighterB,views,percent,date,userid,video,details_date,details_venue,details_broadcast,details_tickets,id'
+     
+var fighterA = AAA[3].split('!!!');
+var fighterB = AAA[4].split('!!!');
+var cotext = AAA[2].split('!!!');
+var detailsdate = AAA[10].split('!!!');
+var detailsvenue = AAA[11].split('!!!');
+var detailsbroadcast = AAA[12].split('!!!');
+var detailstickets = AAA[13].split('!!!');
+
+var titleview  = 'Call Out '+fighterA[1]+' v '+fighterB[1];
+$( ".titleview" ).html(titleview);
+     
+var callouttext = '<b>Fight Call Out Text:</b><br />'+cotext[1];
+$( ".callouttext" ).html(callouttext);   
+
+var calloutdetails = detailsdate[1]+'<br>'+detailsvenue[1]+'<br>'+detailsbroadcast[1]+'<br>'+detailstickets[1];
+$( ".calloutdetail" ).html(calloutdetails); 
+*/     
+
+function forumconvert(){
+var arraysplit = localStorage['postentrydata'];
+var AAA = arraysplit.split(',');
+var dlink = AAA[14].split('!!!');
+window.parent.location.href = 'load-conversation.html?id='+dlink[1];
+}
+     
+     
+</script>
+    
+    
+</body>
+</html>

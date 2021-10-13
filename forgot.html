@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>fightcallout</title>
+	<link rel="stylesheet" href="themes/fightcallout.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+
+	<style>
+        table { width:100%; border-spacing: 0; }
+        th { text-align:left; }
+        th h3 { margin:.6em 0 .6em .5em; }
+        th, td { vertical-align:top; border-top:1px solid #eee; padding: 1px 3px; background-color:#fcfcfc; }
+        td .ui-btn { margin:.4em 0 .5em 0; }
+        td .ui-btn-inner { padding: .4em 15px; }
+		
+		.ui-icon-logo {
+		background-image: url("images/toplogo.png");
+		background-size: 28px 28px; width:15px; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+	}
+	
+	.ui-icon-blank {
+		background-image: url("images/blank.png");
+		background-size: 28px 28px; width:15px; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+	}
+    </style>
+    
+    
+    <!--mysettings-->
+     <script src="js/iscriptz-globalurl.js"></script>
+    
+<script>
+
+/*if(localStorage['mySettings']!="clear"){
+		if(localStorage['mySettings']!=undefined){ window.open("selection.html","_parent"); }
+}*/
+	
+	
+	
+	var hostserver=localStorage['globalurl'];
+	//localStorage['myID'] = '';
+	//localStorage['myID2'] = '';
+ 	//localStorage['mySettings'] = '';
+	function editcheck()
+{ 
+
+
+ var vemail = document.getElementById("email").value;
+ 
+
+	
+   $.post(hostserver+"email.php",
+  {
+    demail:vemail
+  },
+  function(data,status){
+	  
+    if(status=="success"){
+	//alert(data);	
+	document.getElementById('email').value = '';
+    
+	$( "#myPopupDivLOAD" ).popup( "open" );
+	
+	if(data!=""){
+	
+		$(".estatus").html='please check your email...';
+	
+	}
+	//var node = document.getElementById("writestats");
+    //node.innerHTML = "Hi " + vuname+", Your "+status+"fully registered";
+	//$( "#myPopupDiv" ).popup( "open" );
+	//alert("debug:savehere");
+	}else{
+		alert("Please check your connection and try again");
+		}
+  });
+	
+		//             $.getJSON(hostserver+'log.php?email='+vname+'&pass='+vpass, function(data) {
+                   //	arraysettings = val.firm+','+val.email+','+val.gps+','+val.whocansee+','+val.location; 
+							
+		
+  
+/*	localStorage['myID'] = globalX;
+	localStorage['myID2'] = arraydataX;
+	localStorage['mySettings'] = arraydataZ;
+
+if(localStorage['myID2']=="not valid access"){ alert(localStorage['myID2']); }else{
+window.top.location.href = "welcome.html"; 
+}*/
+	
+
+
+
+
+}
+	
+    </script>
+<!--mysettings-->
+     <script src="js/iscriptz-function.js"></script>
+     
+     
+        
+     
+     
+
+</head>
+<body>
+
+ <div data-role="popup" id="myPopupDivLOAD">
+	<p>Successfully Submitted<p>
+</div>
+
+<div data-role="header" data-position="inline" role="banner" class="ui-header ui-bar-inherit">
+			<div style=" width:100%; height:10px">&nbsp;</div>
+           
+           
+           <a href="#"  onclick="goBack()" style="position: fixed; background-image: url('images/toplogo.png');
+		 width:15px; margin-left:0px; margin-top:13px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-left ui-icon-logo">&nbsp;</a>
+      
+      
+       <!-- <a href="#" style="position: fixed; background-image: url('images/blank.png');
+		 width:15px; margin-right:-10px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-left ui-icon-blank">&nbsp;</a>-->
+           
+         <!-- <a href="#" data-transition="flip" style="position: fixed; width:15px; background-image: url('images/blank.png');" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-left ui-icon-blank">&nbsp;</a>-->
+            
+            <h1 class="ui-title" role="heading" aria-level="1">FIGHT <br /><span style="font-weight:lighter">CALLOUT</span></h1>
+            
+            
+             
+            
+		</div>
+
+
+<h2 class="estatus" id="estatus"></h2>
+<form style="padding:20px" action="" target="_parent" method="post">
+Your Email Address:<br />
+<input type="email" name="email" id="email" value="" style="text-align:center" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="">
+<!--<input name="" type="submit" value="Login" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">-->
+ <a href="#" data-role="button" onclick="editcheck()" >Send</a>
+		</form>
+<br />
+
+
+</body>
+</html>

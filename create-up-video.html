@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>stumblelegalapp</title>
+	<link rel="stylesheet" href="themes/fightcallout.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+    
+    <link rel="stylesheet" href="_assets/css/jqm-demos.css">
+
+
+
+
+	<style>
+        table { width:100%; border-spacing: 0; }
+        th { text-align:left; }
+        th h3 { margin:.6em 0 .6em .5em; }
+        th, td { vertical-align:top; border-top:1px solid #eee; padding: 1px 3px; background-color:#fcfcfc; }
+        td .ui-btn { margin:.4em 0 .5em 0; }
+        td .ui-btn-inner { padding: .4em 15px; }
+		
+		.ui-icon-logo {
+		background-image: url("images/toplogo.png");
+		background-size: 28px 28px; width:15px; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+	}
+	
+	
+	
+	
+	
+	
+	 .ui-btn.ui-icon-courts, .ui-btn.ui-icon-courts:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-courts:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-courts{
+        background-image: url(images/courts.png) !important;
+		background-size: 70px 59px; width:120%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		 .ui-btn.ui-icon-calloutactive, .ui-btn.ui-icon-calloutactive:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-calloutactive:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-calloutactive{
+        background-image: url(images/call-out_active.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		 .ui-btn.ui-icon-callout, .ui-btn.ui-icon-callout:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-callout:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-callout{
+        background-image: url(images/call-out_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+	
+	 .ui-btn.ui-icon-create, .ui-btn.ui-icon-create:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-create:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-create{
+        background-image: url(images/create_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+
+	 .ui-btn.ui-icon-createactive, .ui-btn.ui-icon-createactive:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-createactive:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-createactive{
+        background-image: url(images/create_active.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		
+		 .ui-btn.ui-icon-forum, .ui-btn.ui-icon-forum:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-forum:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-forum{
+        background-image: url(images/forum_default.png) !important;
+		background-size: 70px 59px; width:200%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+	
+	
+	 .ui-btn.ui-icon-settings, .ui-btn.ui-icon-settings:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+		background-color: transparent !important;
+
+
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-settings:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-settings{
+        background-image: url(images/settings_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none; 
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+
+
+	
+    </style>
+    
+
+
+
+<!--mysettings-->
+     <script src="js/iscriptz-function.js"></script>
+	 
+	 
+
+
+
+<style type="text/css">
+
+
+
+/*.post_image_holder {
+box-sizing: content-box;
+display: block;
+padding: 2px;
+width: 32px;
+height: 32px;
+float: left;
+margin: 0 10px 5px 0;
+border: 1px solid #ccc;
+-moz-box-shadow: 1px 1px 1px #ddd;
+-webkit-box-shadow: 1px 1px 1px #ddd;
+box-shadow: 1px 1px 1px #ddd;
+border-radius: 6px;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+background-color: white;
+}*/
+
+.imgecircle{
+border-radius: 50%; 
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%; margin-left:20px;
+border-radius: 50%;
+	}
+
+</style> 
+    
+</head>
+<body>
+
+          
+
+  <div data-role="header" data-tap-toggle="false" data-position="fixed" role="banner" class="ui-header ui-bar-inherit">
+<div style=" width:100%; height:10px">&nbsp;</div>
+           
+<a href="#"  onclick="goBack()" data-transition="flip" style="position: fixed; background-image: url('images/toplogo.png');
+		 width:15px;margin-top:13px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-left ui-icon-logo" >&nbsp;</a>
+   
+<h1 class="ui-title" role="heading" aria-level="1">FIGHT <br /><span style="font-weight:lighter">CALLOUT</span></h1>
+   
+ 
+ 
+  </div>    
+      
+      
+      
+<div data-role="content" data-theme="a">   
+<div class="content-primary" style="text-align:center">
+
+
+
+     
+      
+               
+       
+     <div class="app">
+ 
+  <div id="deviceready" class="blink">
+    <p class="event listening"></p>
+    <p class="event received"></p>
+  </div>
+  <div id="pluginsDemoDiv">
+   
+        
+      
+      
+      <p>
+      <button onclick="videoCapturePlusDemo(true,true,5)">Record Call Out</button>
+    </p>
+  
+      
+      <div id="video_meta_container"></div>
+    <div id="video_meta_container2"></div>
+    <div id="video_container"></div>
+      
+      
+  </div>
+</div>
+
+        
+    
+    
+ 
+ <div style="width:100%; text-align:center" onclick="editsave()">
+  <br /><a href="#" onclick="editsave()" style="padding:0px; color:#FFF; text-decoration:none; margin:10px auto; width:200px; text-align:center;">UPLOAD CALL OUT</a>
+<br /><br /></div>
+	
+    <br />
+
+
+    
+    
+    
+</div></div> 
+    
+    
+    
+    
+    
+    
+    
+            
+<div data-role="footer"  data-tap-toggle="true" data-position="fixed" class="ui-footer ui-bar-a ui-footer-fixed slideup" role="banner" style="height:65px; font-size:27px;  background:#000">
+
+
+
+    
+    
+    
+     
+      <div style="width:25%; text-align:center; float:left; font-size:12px"><a onClick="calloutlink()" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="callout" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+      
+       <div style="width:25%; text-align:center; float:left; font-size:12px"><a href="create.html" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="createactive" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+       
+        <div style="width:25%; text-align:center; float:left; font-size:12px"><a onClick="forumlink()"  target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="forum" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+     
+    
+    <div style="width:25%; text-align:center; float:left; font-size:12px"><a href="settings.html" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="settings" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+    
+    
+    	</div>
+
+ 
+    
+
+  <script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index3.js"></script>
+<script type="text/javascript" src="js/videocaptureplus-demo.js"></script>
+<script type="text/javascript">
+  app.initialize();
+</script>
+</body>
+</html>
+
+
+
+

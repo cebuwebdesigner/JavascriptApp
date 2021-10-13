@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Capture Video</title>
+    
+    	<link rel="stylesheet" href="themes/fightcallout.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+    
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="json2.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Called when capture operation is finished
+    //
+    function captureSuccess(mediaFiles) {
+        var i, len;
+        for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+            uploadFile(mediaFiles[i]);
+        }
+    }
+
+    // Called if something bad happens.
+    //
+    function captureError(error) {
+        var msg = 'An error occurred during capture: ' + error.code;
+        navigator.notification.alert(msg, null, 'Uh oh!');
+    }
+
+    // A button will call this function
+    //
+    function captureVideo() {
+        // Launch device video recording application,
+        // allowing user to capture up to 2 video clips
+        navigator.device.capture.captureVideo(captureSuccess, captureError, {limit: 1, duration: 60});
+    }
+
+    // Upload files to server
+    function uploadFile(mediaFile) {
+        var ft = new FileTransfer(),
+            path = mediaFile.fullPath,
+            name = mediaFile.name;
+var datarandom = Math.floor((Math.random() * 99999999999999) + 1);
+localStorage['videofilename'] = datarandom+'.3gp';
+
+
+
+$( "#myPopupDivLOAD" ).popup( "open" );
+
+
+var imageURI = 'images/hide.png';
+				var largeImage = document.getElementById('playerbox');
+	    		largeImage.style.display = 'block';
+        		largeImage.src = imageURI;
+
+        ft.upload(path,
+            "http://www.calloutadmin.com/media/upload3b.php?postid="+datarandom,
+            function(result) {
+                console.log('Upload success: ' + result.responseCode);
+                console.log(result.bytesSent + ' bytes sent');
+				
+				$( "#myPopupDivLOAD" ).popup( "close" );
+				
+				var imageURI = path;
+				var largeImage = document.getElementById('largeImage');
+	    		largeImage.style.display = 'block';
+        		largeImage.src = imageURI;
+		
+            },
+            function(error) {
+                console.log('Error uploading file ' + path + ': ' + error.code);
+            },
+            { fileName: name });
+			
+			//alert(path); alert(name);
+			
+		
+			
+    }
+
+    </script>
+      
+     	<style>
+        table { width:100%; border-spacing: 0; }
+        th { text-align:left; }
+        th h3 { margin:.6em 0 .6em .5em; }
+        th, td { vertical-align:top; border-top:1px solid #eee; padding: 1px 3px; background-color:#fcfcfc; }
+        td .ui-btn { margin:.4em 0 .5em 0; }
+        td .ui-btn-inner { padding: .4em 15px; }
+		
+		.ui-icon-logo {
+		background-image: url("images/toplogo.png");
+		background-size: 28px 28px; width:15px; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+	}
+	
+	
+	
+	
+	
+	
+	 .ui-btn.ui-icon-courts, .ui-btn.ui-icon-courts:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-courts:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-courts{
+        background-image: url(images/courts.png) !important;
+		background-size: 70px 59px; width:120%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		 .ui-btn.ui-icon-calloutactive, .ui-btn.ui-icon-calloutactive:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-calloutactive:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-calloutactive{
+        background-image: url(images/call-out_active.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		 .ui-btn.ui-icon-callout, .ui-btn.ui-icon-callout:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-callout:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-callout{
+        background-image: url(images/call-out_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+	
+	 .ui-btn.ui-icon-create, .ui-btn.ui-icon-create:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-create:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-create{
+        background-image: url(images/create_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+
+	 .ui-btn.ui-icon-createactive, .ui-btn.ui-icon-createactive:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-createactive:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-createactive{
+        background-image: url(images/create_active.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		
+		 .ui-btn.ui-icon-forum, .ui-btn.ui-icon-forum:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-forum:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-forum{
+        background-image: url(images/forum_default.png) !important;
+		background-size: 70px 59px; width:200%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+	
+	
+	 .ui-btn.ui-icon-settings, .ui-btn.ui-icon-settings:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+		background-color: transparent !important;
+
+
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-settings:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-settings{
+        background-image: url(images/settings_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none; 
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+
+
+	
+    </style>
+      <script src="js/iscriptz-function.js"></script>
+      
+      <script type="text/javascript">
+
+    function vidplay() {
+       var video = document.getElementById("largeImage");
+       var button = document.getElementById("play");
+       if (video.paused) {
+          video.play();
+          button.textContent = "||";
+       } else {
+          video.pause();
+          button.textContent = ">";
+       }
+    }
+
+    function restart() {
+        var video = document.getElementById("largeImage");
+        video.currentTime = 0;
+    }
+
+    function skip(value) {
+        var video = document.getElementById("largeImage");
+        video.currentTime += value;
+    }      
+</script>
+    </head>
+    <body> 
+    
+    <div data-role="popup" id="myPopupDivLOAD">
+	<p>loading... please wait<p>
+</div>
+    
+    
+   <div data-role="header" data-tap-toggle="false" data-position="fixed" role="banner" class="ui-header ui-bar-inherit">
+			<div style=" width:100%; height:10px">&nbsp;</div>
+           
+        
+           <a href="#"  onclick="goBack()" data-transition="flip" style="position: fixed; background-image: url('images/toplogo.png');
+		 width:15px;margin-top:13px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-left ui-icon-logo" >&nbsp;</a>
+   
+   
+   
+     <h1 class="ui-title" role="heading" aria-level="1">FIGHT <br /><span style="font-weight:lighter">CALLOUT</span></h1>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+    
+      <div class="content-primary" style="text-align:center">
+    <br> <br> <br>
+    
+    <center>
+    <div id="playerbox"><img style="display:none; width:150px;" id="largeImage" src="images/player.jpg"/></div>
+    <video style="display:none; width:200px; height:150px" src="" id="largeImage"  controls></video>
+    
+    
+
+
+    <br>
+        <button onclick="captureVideo();" style="width:50%; float:left; font-size:12px">RECORD CALL OUT</button>
+        
+        
+        
+       
+    <!--<div id="buttonbar"><button id="restart" onclick="restart();">[]</button> 
+    <button id="rew" onclick="skip(-10)">&lt;&lt;</button><button id="fastFwd" onclick="skip(10)">&gt;&gt;</button></div>-->
+    <button id="play" onclick="vidplay()" style="width:50%; float:left; font-size:12px">REPLAY</button>
+    
+    
+      <br style="clear:both" />
+    
+    
+        
+        
+        
+        
+        
+        </center> 
+      
+       <br /><a href="create.html"  target="_parent" style="padding:0px; color:#FFF; text-decoration:none; margin:10px auto; width:200px; text-align:center;">UPLOAD CALL OUT</a>
+       
+       
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <div data-role="footer"  data-tap-toggle="true" data-position="fixed" class="ui-footer ui-bar-a ui-footer-fixed slideup" role="banner" style="height:65px; font-size:27px;  background:#000">
+
+         
+      <div style="width:25%; text-align:center; float:left; font-size:12px"><a onClick="calloutlink()" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="callout" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+      
+       <div style="width:25%; text-align:center; float:left; font-size:12px"><a href="create.html" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="createactive" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+       
+        <div style="width:25%; text-align:center; float:left; font-size:12px"><a onClick="forumlink()"  target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="forum" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+     
+    
+    <div style="width:25%; text-align:center; float:left; font-size:12px"><a href="settings.html" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="settings" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+    
+    
+    	</div>
+    </body>
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>stumblelegalapp</title>
+	<link rel="stylesheet" href="themes/fightcallout.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+    
+    <link rel="stylesheet" href="_assets/css/jqm-demos.css">
+
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    
+
+<!--     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="_assets/css/jqm-demos.css">
+	<script src="js/jquery.js"></script>
+	<script src="_assets/js/index.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>-->
+
+	<style>
+        table { width:100%; border-spacing: 0; }
+        th { text-align:left; }
+        th h3 { margin:.6em 0 .6em .5em; }
+        th, td { vertical-align:top; border-top:1px solid #eee; padding: 1px 3px; background-color:#fcfcfc; }
+        td .ui-btn { margin:.4em 0 .5em 0; }
+        td .ui-btn-inner { padding: .4em 15px; }
+		
+		.ui-icon-logo {
+		background-image: url("images/toplogo.png");
+		background-size: 28px 28px; width:15px; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+	}
+	
+	
+	
+	
+	
+	
+	 .ui-btn.ui-icon-courts, .ui-btn.ui-icon-courts:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-courts:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-courts{
+        background-image: url(images/courts.png) !important;
+		background-size: 70px 59px; width:120%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		 .ui-btn.ui-icon-calloutactive, .ui-btn.ui-icon-calloutactive:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-calloutactive:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-calloutactive{
+        background-image: url(images/call-out_active.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		 .ui-btn.ui-icon-callout, .ui-btn.ui-icon-callout:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-callout:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-callout{
+        background-image: url(images/call-out_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+	
+	 .ui-btn.ui-icon-create, .ui-btn.ui-icon-create:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-create:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-create{
+        background-image: url(images/create_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+
+	 .ui-btn.ui-icon-createactive, .ui-btn.ui-icon-createactive:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-createactive:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-createactive{
+        background-image: url(images/create_active.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		
+		 .ui-btn.ui-icon-forum, .ui-btn.ui-icon-forum:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-forum:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-forum{
+        background-image: url(images/forum_default.png) !important;
+		background-size: 70px 59px; width:200%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+	
+	
+	 .ui-btn.ui-icon-settings, .ui-btn.ui-icon-settings:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+		background-color: transparent !important;
+
+
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-settings:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-settings{
+        background-image: url(images/settings_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none; 
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+
+
+	
+    </style>
+    
+
+
+
+<!--mysettings-->
+     <script src="js/iscriptz-function.js"></script>
+	 
+	 
+
+
+
+
+
+<script>
+function addonlocal(){
+    var detaildatez = document.getElementById("detaildate").value;
+    var detailvenuez  = document.getElementById("detailvenue").value;
+    var detailbrodcastz  = document.getElementById("detailbrodcast").value;
+    var detailticketz  = document.getElementById("detailticket").value;
+
+   localStorage['addonlocal'] = detaildatez+','+detailvenuez+','+detailbrodcastz+','+detailticketz;
+    
+    window.parent.location.href = "create.html"; 
+}
+</script>
+    
+    
+    
+    
+    
+    
+<!-- Mobiscroll JS and CSS Includes -->
+    
+    <script src="js/mobiscroll.core.js"></script>
+    <script src="js/mobiscroll.widget.js"></script>
+    <script src="js/mobiscroll.scroller.js"></script>
+
+    <script src="js/mobiscroll.util.datetime.js"></script>
+    <script src="js/mobiscroll.datetimebase.js"></script>
+    <script src="js/mobiscroll.datetime.js"></script>
+    
+
+    <script src="js/mobiscroll.widget.android.js"></script>
+	<script src="js/mobiscroll.wp-light.js"></script>
+
+
+  
+
+    <link href="css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.icons.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.widget.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.widget.android.css" rel="stylesheet" type="text/css" />
+     <link href="css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.scroller.android.css" rel="stylesheet" type="text/css" />
+    
+       
+   
+
+        <script>
+       
+	   
+
+	   
+	   $(function () {
+
+            function init() {
+                
+                // Select demo initialization
+                $('#demo_select').mobiscroll().select({
+                    theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang        // Specify language like: lang: 'pl' or omit setting to use default 
+                });
+                
+				
+              //new Date(year, month, day, hours, minutes, seconds, milliseconds); 
+                
+                // Date & Time demo initialization
+                $('#detaildate').mobiscroll().date({
+                    theme: theme,     // Specify theme like: theme: 'ios' or omit setting to use default 
+                    mode: mode,       // Specify scroller mode like: mode: 'mixed' or omit setting to use default 
+                    display: display, // Specify display mode like: display: 'bottom' or omit setting to use default 
+                    lang: lang,       // Specify language like: lang: 'pl' or omit setting to use default
+					minDate: new Date(),  // More info about minDate: http://docs.mobiscroll.com/2-14-0/datetime#!opt-minDate
+                    maxDate: new Date(3015,7,30,15,44),   // More info about maxDate: http://docs.mobiscroll.com/2-14-0/datetime#!opt-maxDate
+					//invalid:[ { start: '00:00', end: '08:59' }, { start: '16:00', end: '23:59' }],
+                    stepMinute: 1  // More info about stepMinute: http://docs.mobiscroll.com/2-14-0/datetime#!opt-stepMinute
+                });
+                
+              
+                
+            }    
+
+            // -------------------------------------------------------------------
+            // Demo page code START, you can disregard this in your implementation
+            var demo, theme, mode, display, lang;
+            
+            $('.settings').on('change', function() {
+                demo = 'detaildate';
+                theme = 'android',
+                mode = 'scroller',
+                display = 'modal',
+                lang = 'en'
+
+                //$('.demo-cont').hide();
+                //$("#demo_cont_" + demo).show();
+                
+                init();
+            });
+
+            $('#demo').trigger('change');
+            // Demo page code END
+            // -------------------------------------------------------------------
+        });
+	   
+	   
+	   
+	   
+	   
+	   
+	  
+    </script>
+   
+   
+   
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-tap-toggle="false" data-position="fixed" role="banner" class="ui-header ui-bar-inherit">
+			<div style=" width:100%; height:10px">&nbsp;</div>
+           
+        
+           <a href="#"  onclick="goBack()" data-transition="flip" style="background-image: url('images/toplogo.png');
+		 width:15px;margin-top:13px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-left ui-icon-logo" >&nbsp;</a>
+   
+   
+   
+     <h1 class="ui-title" role="heading" aria-level="1">FIGHT <br /><span style="font-weight:lighter">CALLOUT</span></h1>
+   
+   
+          
+    
+
+<!-- <div style="position: fixed;  text-align:right; float:right; width:40%; padding:0px"></div>-->
+ 
+ <!--
+ 
+ <a href="#" style="position: fixed; background-image: url('images/toplogo.png');
+		 width:15px; margin-right:-10px; margin-top:13px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-right ui-icon-logo">&nbsp;</a> -->
+      
+		
+    
+      <!-- <div style="text-align:right; float:right; width:40%; padding:10px">LATEST</div>  <a href="selection.html" data-transition="flip" style="position: fixed; color:#FFF; background-image: width:15px; margin-right:-10px; margin-top:13px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-right ">&nbsp;</a>-->
+        
+        
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+  
+
+
+
+        
+        
+        
+        
+        
+        
+
+<div data-role="content">   
+
+
+		<div class="content-primary" >
+
+       <div name="demo" id="demo" class="settings"></div>
+
+ <form enctype="multipart/form-data" ><!--action="selection.html" target="_parent"
+<h4 style=" width:100%; text-align:center">Personal Information</h4>-->
+Fight Call Out Details:
+
+&nbsp; <br  style="clear:both"/>&nbsp; <br  style="clear:both"/>
+
+<div style="width:30%; float:left" >&nbsp;<br />
+Date:
+</div>
+<div style="width:70%; float:left" >
+<input type="text" data-role="date" name="detaildate" id="detaildate" value=""  class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="" >
+</div>
+
+<br  style="clear:both"/>
+
+
+<div style="width:30%; float:left" >&nbsp;<br />
+Venue:
+</div>
+<div style="width:70%; float:left" >
+<input type="text"name="detailvenue" id="detailvenue" value=""  class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="" >
+</div>
+
+<br  style="clear:both"/>
+
+
+
+<div style="width:30%; float:left" >&nbsp;<br />
+Broadcast:
+</div>
+<div style="width:70%; float:left" >
+<input type="text"name="detailbrodcast" id="detailbrodcast" value=""  class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="" >
+</div>
+
+<br  style="clear:both"/>
+
+
+
+<div style="width:30%; float:left" >&nbsp;<br />
+Tickets:
+</div>
+<div style="width:70%; float:left" >
+<input type="text"name="detailticket" id="detailticket" value=""  class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="" >
+</div>
+
+<br  style="clear:both"/>
+
+ <div style="width:100%; text-align:center" onclick="addonlocal()">
+  <br /><a href="#" onclick="addonlocal()" style="padding:0px; color:#FFF; text-decoration:none; margin:10px auto; width:200px; text-align:center;">SEND</a>
+<br /><br /></div><!--<input name=""    type="submit" value="Submit"  class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">-->
+	
+    <br />
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div data-role="footer"  data-tap-toggle="true" data-position="fixed" class="ui-footer ui-bar-a ui-footer-fixed slideup" role="banner" style="height:65px; font-size:27px;  background:#000; ">
+
+
+      <!-- url(images/footerbg.png)<div style="width:20%; text-align:center; float:left; padding-top:2px; font-size:12px; background:url(images/footeractive.png) no-repeat center top">
+
+    
+     
+   <a href="#" onClick="courtlink()"><button id="saveFileBtn" data-iconpos="center" data-icon="courts" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>-->
+     
+      <div style="width:25%; text-align:center; float:left; font-size:12px"><a onClick="calloutlink()" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="callout" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+      
+       <div style="width:25%; text-align:center; float:left; font-size:12px"><a href="create.html" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="createactive" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+       
+        <div style="width:25%; text-align:center; float:left; font-size:12px"><a onClick="forumlink()"  target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="forum" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+    
+    <div style="width:25%; text-align:center; float:left; font-size:12px"><a href="settings.html" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="settings" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+    
+    
+    	</div>
+
+
+ 
+</div>
+    
+
+ <script type="text/javascript" charset="utf-8">
+    
+     if(localStorage['addonlocal']!=""){
+     var theentry = localStorage['addonlocal'].split(','); 
+     
+     document.getElementById('detaildate').value = theentry[0];
+     document.getElementById('detailvenue').value = theentry[1];
+     document.getElementById('detailbrodcast').value = theentry[2];
+     document.getElementById('detailticket').value = theentry[3];
+
+     }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+    
+    
+    <!--localStorage['globalurl']-->
+    
+    
+<!--mysettings-->
+     <script src="js/iscriptz-function.js"></script>
+  <!--mysettings-->
+     <script src="js/iscriptz-globalurl.js"></script>
+     
+    
+<script type="text/javascript">
+var url = window.location.href;
+var params = url.split('=');
+var postid = params[1];
+
+var vdatawhere = "id!!!"+params[1];
+var vdbtable = "select,fco_post"; 
+var vfields ='username,type,text,fighterA,fighterB,views,percent,date,userid,video,details_date,details_venue,details_broadcast,details_tickets';
+    //,dbnstore:dbnstore
+localStorage['postentrydata'] = '';
+//alert(vdatastore+'--'+dbnstore+'--'+vdbtable);
+var hostserver=localStorage['globalurl'];
+
+   $.post(hostserver+"switch.php",
+  {
+    dbtable:vdbtable,
+	datawhere:vdatawhere,
+	dbnstore:vfields
+  },
+  function(data,status){
+	 //alert(data);
+    if(status=="success"){
+
+    localStorage['postentrydata'] = data; //alert(data);
+	
+	}else{
+		alert("Please check your connection and try again"); 
+       
+		}
+  });
+	
+
+
+
+
+var vdbtable = "select,fco_members";
+    
+    //,dbnstore:dbnstore
+localStorage['memberarraydata'] = '';
+//alert(vdatastore+'--'+dbnstore+'--'+vdbtable);
+var hostserver=localStorage['globalurl'];
+
+   $.post(hostserver+"arraydata.php",
+  {
+    dbtable:vdbtable,
+	datawhere:vdatawhere
+  },
+  function(data,status){
+	 //alert(data);
+    if(status=="success"){
+
+    localStorage['memberarraydata'] = data;
+	
+	}else{
+		alert("Please check your connection and try again"); 
+       
+		}
+  });
+	
+    
+    
+    
+
+
+
+
+
+
+
+
+localStorage['forumarraydata'] = '';
+
+
+var url = window.location.href;
+var params = url.split('=');
+var postid = params[1];
+var vdatawhere = "postid!!!"+params[1];
+//alert(vdatawhere);
+//var dbnstore = "id,username,type,text,fighterA,fighterB,views,percent,date,userid,video,details_date,details_venue,details_broadcast,details_tickets";
+
+var vdbtable = "select,fco_forum";
+    
+    //,dbnstore:dbnstore
+
+//alert(vdatastore+'--'+dbnstore+'--'+vdbtable);
+var hostserver=localStorage['globalurl'];
+
+   $.post(hostserver+"arraydata.php",
+  {
+    dbtable:vdbtable,
+	datawhere:vdatawhere
+  },
+  function(data,status){
+	 //alert(data);
+    if(status=="success"){
+
+      localStorage['forumarraydata'] = data;
+	  	var url = window.location.href;
+		var params = url.split('=');
+		var postid = params[1];
+	  window.parent.location.href = 'forum-conversation.html?postid='+postid;
+   
+	}else{
+		alert("Please check your connection and try again"); 
+       
+		}
+  });
+	
+    
+    
+    
+</script>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><style type="text/css">
+<!--
+body {
+	background-color: #ef3b22; position:relative
+}
+-->
+</style>
+
+</head>
+<body>
+</body>
+</html>

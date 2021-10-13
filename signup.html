@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>stumblelegalapp</title>
+	<link rel="stylesheet" href="themes/fightcallout.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+
+	<style>
+        table { width:100%; border-spacing: 0; }
+        th { text-align:left; }
+        th h3 { margin:.6em 0 .6em .5em; }
+        th, td { vertical-align:top; border-top:1px solid #eee; padding: 1px 3px; background-color:#fcfcfc; }
+        td .ui-btn { margin:.4em 0 .5em 0; }
+        td .ui-btn-inner { padding: .4em 15px; }
+		
+		.ui-icon-logo {
+		background-image: url("images/toplogo.png");
+		background-size: 28px 28px; width:15px; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+	}
+	.whitetext{text-decoration:none; color:#FFF}
+	.whitetext:active{text-decoration:none; color:#FFF}
+	
+	.ui-icon-blank {
+		background-image: url("images/blank.png");
+		background-size: 28px 28px; width:15px; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+	}
+
+
+.fileinput-button {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  margin-right: 4px;
+}
+.fileinput-button input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  transform: translate(-300px, 0) scale(4);
+  font-size: 23px;
+  direction: ltr;
+  cursor: pointer;
+}
+
+#preview {
+				width: 80%; max-width: 300px;
+			}
+			#preview img {
+				width: 100%;
+			}
+			.hiddenfile {
+			 width: 0px;
+			 height: 0px;
+			 overflow: hidden;
+			}
+			
+</style>    
+    
+    <script src="js/iscriptz-globalurl.js"></script>
+    
+<script type='text/javascript'>
+	
+	
+//var hostserver='http://buildwebdesign.com/kryptonite/legalapp/';  
+var hostserver=localStorage['globalurl'];
+
+function editsave()
+{ 
+
+
+
+ var vfname = document.getElementById("fname").value;
+ var vcategory = document.getElementById("category").value;
+ var vemail = document.getElementById("vemail").value;
+  var vuname = document.getElementById("vusername").value;
+ var vpassword = document.getElementById("vpassword").value;
+
+
+
+
+
+
+
+	var addimg=''; var addtablephoto='';
+    if(localStorage['imagefilename']!=""){
+        addimg = ","+localStorage['imageprofilename'];
+        addtablephoto = ',photo';
+    }
+
+//alert(vname);position:vposition,
+var vdatastore = vfname+","+vcategory+","+vemail+","+vpassword+","+vuname+addimg;
+var dbnstore = "fname,cat,email,pass,uname"+addtablephoto;
+var vdbtable = "insert,fco_members,unique,2";
+
+//alert(vdatastore+'--'+dbnstore+'--'+vdbtable);
+//alert(hostserver);
+
+	
+   $.post(hostserver+"switch.php",
+  {
+    dbtable:vdbtable,
+	datastore:vdatastore,
+	dbnstore:dbnstore
+  },
+  function(data,status){
+	 // alert(data);
+    if(status=="success"){
+	window.top.location.href = "form.html";
+	//var node = document.getElementById("writestats");
+   // node.innerHTML = "Hi " + vuname+", Your "+status+"fully registered";
+	//$( "#myPopupDiv" ).popup( "open" );
+	
+	//alert("debug:savehere");
+	}else{
+		alert("Please check your connection and try again");
+		}
+  });
+	
+	
+	
+}
+	
+    </script>
+	
+<!--mysettings-->
+     <script src="js/iscriptz-function.js"></script>
+
+</head>
+<body>
+<div data-role="popup" id="myPopupDiv">
+	<p id="writestats"><p>
+</div>
+<div data-role="header" data-position="fixed" role="banner" class="ui-header ui-bar-inherit" style="position:fixed;">  <div style=" width:100%; height:10px">&nbsp;</div>  
+			
+       <!-- <a href="#" style="position: fixed; background-image: url('images/blank.png');
+		 width:15px; margin-right:-10px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-left ui-icon-blank">&nbsp;</a> -->
+           <a href="form.html" data-transition="flip"  style=" background-image: url('images/toplogo.png');
+		 width:15px; margin-left:0px; margin-top:13px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-left ui-icon-logo">&nbsp;</a>
+            
+            <h1 class="ui-title" role="heading" aria-level="1">Registration<!--Stumble <span style="font-weight:lighter">legal--></span></h1>
+               
+            
+
+         
+		</div>
+        
+        
+
+<form style="padding:20px" enctype="multipart/form-data" ><!--action="selection.html" target="_parent"-->
+<h4 style=" width:100%; text-align:center">Personal Information</h4>
+
+<input type="text" name="fname" id="fname" value="" style="text-align:center" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="Fullname">
+<input type="email" name="vemail" id="vemail" value="" style="text-align:center" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="Email Address">
+
+
+
+<select name="category" id="category">
+<option value=""> &nbsp; &nbsp; &nbsp; &nbsp;Category</option>
+<!--<option value="Fighter">Fighter</option>
+<option value="Fighter Fan">Fighter Fan</option>
+<option value="Trainer">Trainer</option>
+<option value="Promoter">Promoter</option>
+<option value="Match Maker">Match Maker</option>
+<option value="Manager">Manager</option>-->
+</select>
+
+<!--<div class="ui-btn ui-body-c ui-icon-camera ui-btn-icon-left ui-corner-all fileinput-button ui-shadow-inset " >
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take or Upload Photo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+<input type="file" name="files" accept="image/*" multiple data-role="none" capture>
+</div>
+-->
+<a data-role="button" onclick="createpro()" data-icon="edit" > Take or Upload Photo</a> 
+
+<br style="clear:both" />
+
+
+
+<!--<fieldset data-role="controlgroup">
+<legend></legend>
+<input type="radio" name="radio-choice-1" id="radio-choice-1">
+<label for="radio-choice-1"> Fan </label>
+<input type="radio" name="radio-choice-1" id="radio-choice-2">
+<label for="radio-choice-2"> Fighter </label>
+<input type="radio" name="radio-choice-1" id="radio-choice-3">
+<label for="radio-choice-3"> Promoter </label>
+<input type="radio" name="radio-choice-1" id="radio-choice-4">
+<label for="radio-choice-4"> Others </label>
+</fieldset>
+
+
+
+
+<input type="text" name="phone" id="vphone" value="" style="text-align:center" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="Phone">
+
+
+
+<h4 style=" width:100%; text-align:center">Login Information</h4>
+<input type="text" name="uname" id="uname" value="" style="text-align:center" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="Username">
+class="ui-btn ui-icon-camera ui-btn-icon-left ui-corner-all fileinput-button"-->
+
+
+<!--<a id="takePhotoButton" data-role="button" data-icon="camera" href="callout-up-photo.html" target="_parent">Take a Photo&nbsp;&nbsp;&nbsp;</a> -->
+
+
+
+<!-- or <input name="attachment" type="file" id="attachment" />-->
+<input type="text" name="vusername" id="vusername" value="" style="text-align:center" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="Username">
+<input type="password" name="vpass" id="vpass" value="" style="text-align:center" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="Password"> 
+<input type="password" name="vpassword" id="vpassword" value="" style="text-align:center" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="Retype Password">
+
+ <div style="width:100%; text-align:center">
+  <br /><a href="#" onclick="editsave()" style="padding:0px; color:#FFF; text-decoration:none; margin:10px auto; width:200px; text-align:center;">SUBMIT</a>
+<br /><br /></div><!--<input name=""  type="submit" value="Submit"  class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">-->
+<br /><!-- <div style="width:100%; text-align:center">  <a href="form.html"   data-transition="flip" class="whitetext">already registered?</a></div> --> 	
+ <div style="text-align:center"></div>
+        
+        
+		</form>
+
+
+<!--<div data-role="footer" data-theme="a" data-position="fixed" class="ui-footer ui-bar-a ui-footer-fixed slideup" role="contentinfo">
+					<a href="index.html" data-role="button" data-icon="plus">Add</a>
+	<a href="index.html" data-role="button" data-icon="arrow-u">Up</a>
+	<a href="index.html" data-role="button" data-icon="arrow-d">Down</a>
+			</div>--><script type="text/javascript" charset="utf-8">  
+			
+    function createpro(){
+ var vfname = document.getElementById("fname").value;
+ var vcategory = document.getElementById("category").value;
+ var vemail = document.getElementById("vemail").value;
+  var vuname = document.getElementById("vusername").value;
+ var vpassword = document.getElementById("vpassword").value;
+ 
+ localStorage['myProSettings'] = vfname+','+vcategory+','+vemail+','+vuname+','+vpassword;
+ 
+ window.parent.location.href = "imagecaptureprofile.html";
+	}
+			
+			
+
+var select = document.getElementById("category");
+var options = ["Fighter", "Fight Fan", "Trainer", "Promoter", "Match Maker", "Manager"];
+for(var i = 0; i < options.length; i++) {
+    var opt = options[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = i;
+    select.appendChild(el);
+}
+
+
+     var AAA = localStorage['myProSettings'].split(',');
+     var vfname = AAA[0].split('!!!'); //userid
+	 var vcategory = AAA[1].split('!!!'); //fname
+	 var vemail = AAA[2].split('!!!'); //cat
+	 var vuname = AAA[3].split('!!!'); //fnphoto
+	 var vpassword = AAA[4].split('!!!'); //uname
+
+ document.getElementById("fname").value = vfname;
+ document.getElementById("category").value = vcategory;
+ document.getElementById("vemail").value = vemail;
+ document.getElementById("vusername").value = vuname;
+ document.getElementById("vpassword").value = vpassword;
+	 
+	 
+</script>
+
+
+
+
+</body>
+</html>

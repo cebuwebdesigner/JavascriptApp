@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+    
+    
+    <!--localStorage['globalurl']-->
+    
+    
+<!--mysettings-->
+     <script src="js/iscriptz-function.js"></script>
+  <!--mysettings-->
+     <script src="js/iscriptz-globalurl.js"></script>
+     
+    
+<script type="text/javascript">
+
+
+var vdatawhere = "stat!!!1";
+//var dbnstore = "id,username,type,text,fighterA,fighterB,views,percent,date,userid,video,details_date,details_venue,details_broadcast,details_tickets";
+var vdbtable = "select,fco_post";
+    
+    //,dbnstore:dbnstore
+
+//alert(vdatastore+'--'+dbnstore+'--'+vdbtable);
+var hostserver=localStorage['globalurl'];
+
+   $.post(hostserver+"arraydata.php",
+  {
+    dbtable:vdbtable,
+	datawhere:vdatawhere
+  },
+  function(data,status){
+	 //alert(data);
+    if(status=="success"){
+
+        localStorage['postarraydata'] = data;
+//localStorage['postarraydata'] =  "BoxingA!!!Adam Call Out Pete!!!70%!!!100 Views!!!7 min ago!!!images/footeractive.png!!!1,BoxingB!!!Adam Call Out Pete!!!70%!!!100 Views!!!7 min ago!!!images/footeractive.png!!!1,BoxingC2!!!Adam Call Out Pete!!!70%!!!100 Views!!!7 min ago!!!images/footeractive.png!!!1,BoxingD!!!Adam Call Out Pete!!!70%!!!100 Views!!!7 min ago!!!images/footeractive.png!!!1";
+
+      window.parent.location.href = "callout.html";
+   
+
+	}else{
+		alert("Please check your connection and try again"); 
+       
+		}
+  });
+	
+    
+    
+    
+</script>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><style type="text/css">
+<!--
+body {
+	background-color: #ef3b22; position:relative
+}
+-->
+</style>
+
+</head>
+<body>
+</body>
+</html>

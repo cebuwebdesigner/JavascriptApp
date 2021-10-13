@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>stumblelegalapp</title>
+	<link rel="stylesheet" href="themes/fightcallout.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+    
+    <link rel="stylesheet" href="_assets/css/jqm-demos.css">
+
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    
+
+<!--     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="_assets/css/jqm-demos.css">
+	<script src="js/jquery.js"></script>
+	<script src="_assets/js/index.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>-->
+
+	<style>
+        table { width:100%; border-spacing: 0; }
+        th { text-align:left; }
+        th h3 { margin:.6em 0 .6em .5em; }
+        th, td { vertical-align:top; border-top:1px solid #eee; padding: 1px 3px; background-color:#fcfcfc; }
+        td .ui-btn { margin:.4em 0 .5em 0; }
+        td .ui-btn-inner { padding: .4em 15px; }
+		
+		.ui-icon-logo {
+		background-image: url("images/toplogo.png");
+		background-size: 28px 28px; width:15px; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+	}
+	
+	
+	
+	
+	
+	
+	 .ui-btn.ui-icon-courts, .ui-btn.ui-icon-courts:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-courts:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-courts{
+        background-image: url(images/courts.png) !important;
+		background-size: 70px 59px; width:120%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		 .ui-btn.ui-icon-calloutactive, .ui-btn.ui-icon-calloutactive:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-calloutactive:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-calloutactive{
+        background-image: url(images/call-out_active.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		 .ui-btn.ui-icon-callout, .ui-btn.ui-icon-callout:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-callout:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-callout{
+        background-image: url(images/call-out_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+	
+	 .ui-btn.ui-icon-create, .ui-btn.ui-icon-create:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-create:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-create{
+        background-image: url(images/create_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+
+	 .ui-btn.ui-icon-createactive, .ui-btn.ui-icon-createactive:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-createactive:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-createactive{
+        background-image: url(images/create_active.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		
+		 .ui-btn.ui-icon-forum, .ui-btn.ui-icon-forum:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-forum:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-forum{
+        background-image: url(images/forum_default.png) !important;
+		background-size: 70px 59px; width:200%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+	
+	
+	 .ui-btn.ui-icon-settings, .ui-btn.ui-icon-settings:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+		background-color: transparent !important;
+
+
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-settings:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-settings{
+        background-image: url(images/settings_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none; 
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+
+
+	
+    </style>
+    
+
+    <script src="js/iscriptz-globalurl.js"></script>
+    
+<script type='text/javascript'>
+	 //alert(localStorage['mySettings']);
+	
+//var hostserver='http://buildwebdesign.com/kryptonite/legalapp/';  
+var hostserver=localStorage['globalurl'];
+
+function editsave()
+{ 
+ var userid  = document.getElementById("userid").value;
+ var uname = document.getElementById("uname").value;
+ var ftrname1 = document.getElementById("ftrname1").value;
+ var ftrname2 = document.getElementById("ftrname2").value;
+ var selectType = document.getElementById("selectCat").value;
+ var callouttext = document.getElementById("callouttext").value;
+
+ 
+//alert(vname);position:vposition,
+    var adddata=''; var adddatable='';
+    if(localStorage['addonlocal']!=undefined&&localStorage['addonlocal']!=''){
+        adddata = ","+localStorage['addonlocal'];
+        adddatable = ',details_date,details_venue,details_broadcast,details_tickets';
+    }
+    
+	
+
+	var addimg=''; var addtablephoto='';
+    if(localStorage['imagecreatesavefilename']!=undefined&&localStorage['imagecreatesavefilename']!=''){
+        addimg = ","+localStorage['imagecreatesavefilename'];
+        addtablephoto = ',photo'; 
+    }
+	
+	
+	
+	var addvideo=''; var addtablevideo='';
+    if(localStorage['videofilename']!=undefined&&localStorage['videofilename']!=''){
+        
+        addvideo = ","+localStorage['videofilename'];
+        addtablevideo = ',video'; 
+        
+        
+    }
+	
+	
+  
+    
+    
+	
+var vdatastore = userid+","+uname+","+ftrname1+","+ftrname2+","+selectType+","+callouttext+adddata+addimg+addvideo;//+","+localStorage['addonlocal'];
+var dbnstore = "userid,username,fighterA,fighterB,type,text"+adddatable+addtablephoto+addtablevideo;
+var vdbtable = "insert,fco_post";//,unique,2
+
+//alert(vdatastore+'--'+dbnstore+'--'+vdbtable);
+//alert(hostserver);
+
+	
+   $.post(hostserver+"switch.php",
+  {
+    dbtable:vdbtable,
+	datastore:vdatastore,
+	dbnstore:dbnstore
+  },
+  function(data,status){
+	 // alert(data);
+    if(status=="success"){
+	
+	//window.top.location.href = "callout.html";
+	$( "#myPopupDivLOAD" ).popup( "open" );
+	//var node = document.getElementById("writestats");
+   // node.innerHTML = "Hi " + vuname+", Your "+status+"fully registered";
+	//$( "#myPopupDiv" ).popup( "open" );
+	localStorage['addonlocal']='';
+    localStorage['fieldup'] = '';
+	
+	localStorage['imageprosavefilename']='';
+	localStorage['videofilename']='';
+		
+ 
+    document.getElementById('ftrname1').value = '';
+    document.getElementById('ftrname2').value = '';
+    document.getElementById('selectCat').value = '';
+    document.getElementById('callouttext').value = '';
+	
+	setInterval(function(){$( "#myPopupDivLOAD" ).popup( "close" );}, 5500);
+   // localStorage['mySettings']='';
+	//alert("debug:savehere");
+	}else{
+		alert("Please check your connection and try again");
+		}
+  });
+	
+	
+	
+}
+	
+    </script>
+	
+
+
+<!--mysettings-->
+     <script src="js/iscriptz-function.js"></script>
+	 
+	 
+
+
+
+<style type="text/css">
+
+
+
+/*.post_image_holder {
+box-sizing: content-box;
+display: block;
+padding: 2px;
+width: 32px;
+height: 32px;
+float: left;
+margin: 0 10px 5px 0;
+border: 1px solid #ccc;
+-moz-box-shadow: 1px 1px 1px #ddd;
+-webkit-box-shadow: 1px 1px 1px #ddd;
+box-shadow: 1px 1px 1px #ddd;
+border-radius: 6px;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+background-color: white;
+}*/
+
+.imgecircle{
+border-radius: 50%; 
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%; margin-left:20px;
+border-radius: 50%;
+	}
+
+</style> 
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-tap-toggle="false" data-position="fixed" role="banner" class="ui-header ui-bar-inherit">
+			<div style=" width:100%; height:10px">&nbsp;</div>
+           
+        
+           <a href="#" onclick="editbck2()" data-transition="flip" style="background-image: url('images/toplogo.png');
+		 width:15px;margin-top:13px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-left ui-icon-logo" >&nbsp;</a>
+   
+   
+   
+     <h1 class="ui-title" role="heading" aria-level="1">FIGHT <br /><span style="font-weight:lighter">CALLOUT</span></h1>
+   
+   
+          
+    
+
+<!-- <div style="position: fixed;  text-align:right; float:right; width:40%; padding:0px"></div>-->
+ 
+ <!--
+ 
+ <a href="#" style="position: fixed; background-image: url('images/toplogo.png');
+		 width:15px; margin-right:-10px; margin-top:13px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-right ui-icon-logo">&nbsp;</a> -->
+      
+		
+    
+      <!-- <div style="text-align:right; float:right; width:40%; padding:10px">LATEST</div>  <a href="selection.html" data-transition="flip" style="position: fixed; color:#FFF; background-cssimage: width:15px; margin-right:-10px; margin-top:13px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-right ">&nbsp;</a>-->
+      
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+  
+
+
+
+        
+        
+        
+        
+        
+        
+
+<div data-role="content">   
+
+
+ <div data-role="popup" id="myPopupDivLOAD">
+	<p>Successfully Submitted<p>
+</div>
+
+
+
+
+		<div class="content-primary" >
+
+
+ <form  enctype="multipart/form-data" ><!--action="selection.html" target="_parent"
+<h4 style=" width:100%; text-align:center">Personal Information</h4>-->
+<div style="width:20%; float:left" >&nbsp;<br />
+Creator: 
+</div>
+
+<div style="width:60%; float:left; font-weight:bold; padding-top:10px; padding-bottom:10px; border:1px #000; margin-top:10px; padding-left:10px; background-color:#df2f1b" id="uname2"  >
+<input type="hidden" name="uname" id="uname" />
+<input type="hidden" name="userid" id="userid" />
+</div>
+
+     
+     
+
+<br  style="clear:both"/><br  style="clear:both"/>
+
+Call Out: <br  style="clear:both"/>
+<div style="width:45%; float:left;" >
+<input type="text" name="ftrname1" id="ftrname1" value=""  class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="Fighter Name" >
+</div>
+
+<div style="width:10%; float:left; text-align:center">&nbsp;<br />VS</div>
+
+<div style="width:45%; float:left" >
+<input type="text"name="ftrname2" id="ftrname2" value=""  class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="Fighter Name" >
+</div>
+
+<br  style="clear:both"/>
+
+
+<select name="selectCat" id="selectCat">
+<option value="">Category</option>
+</select>
+
+
+<div style="width:30%; float:left" >&nbsp;<br />
+Call Out Text:
+</div>
+
+<div style="width:70%; float:left" >
+<textarea name="callouttext" id="callouttext"></textarea>
+</div>
+<br  style="clear:both"/>
+<!--<fieldset data-role="controlgroup">
+<legend></legend>
+<input type="radio" name="radio-choice-1" id="radio-choice-1">
+<label for="radio-choice-1"> Fan </label>
+<input type="radio" name="radio-choice-1" id="radio-choice-2">
+<label for="radio-choice-2"> Fighter </label>
+<input type="radio" name="radio-choice-1" id="radio-choice-3">
+<label for="radio-choice-3"> Promoter </label>
+<input type="radio" name="radio-choice-1" id="radio-choice-4">
+<label for="radio-choice-4"> Others </label>
+</fieldset>
+
+
+
+
+<input type="text" name="phone" id="vphone" value="" style="text-align:center" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="Phone">
+
+
+
+<h4 style=" width:100%; text-align:center">Login Information</h4>
+<input type="text" name="uname" id="uname" value="" style="text-align:center" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="Username">
+-->
+<script>
+    function create(url){
+var ftrname1 = document.getElementById("ftrname1").value;
+var ftrname2 = document.getElementById("ftrname2").value;
+var selectCat = document.getElementById("selectCat").value;
+var callouttext = document.getElementById("callouttext").value;
+    
+localStorage['fieldup'] = ftrname1+','+ftrname2+','+selectCat+','+callouttext;
+//alert(url);
+
+switch(url){
+/*test1
+case "takephoto": window.location.href = "camera-image_ok.html"; break;
+case "takevideo": window.location.href = "camera-photo_ok.html"; break;*/
+//test2
+case "takevideo": window.parent.location.href = "videocapturetest.html"; break;
+case "takephoto": window.parent.location.href = "imagecapturetest.html"; break;
+//case "takephoto": window.location.href = "create-up-photo.html"; break;
+//case "takevideo": window.location.href = "create-up-video.html"; break;
+//ok
+//case "takephoto": window.location.href = "create-up-photo.html"; break;
+
+case "takedetails": window.parent.location.href = "create-details.html"; break;
+}        
+        
+    }
+</script>
+
+<a id="takePhotoButton" data-role="button" data-icon="camera" onclick="create('takephoto')">Take/Upload a Photo&nbsp;&nbsp;&nbsp;</a> 
+
+<a id="takePhotoButton" data-role="button" data-icon="film" onclick="create('takevideo')">Record A Call Out&nbsp;&nbsp;&nbsp;</a> 
+<!-- or <input name="attachment" type="file" id="attachment" />-->
+
+<a data-role="button" onclick="create('takedetails')" data-icon="edit" > Fight Details</a> 
+
+ <div   style="width:100%; text-align:center" >
+  <br /><a href="#" onclick="editsave()" style="padding:0px; color:#FFF; text-decoration:none; margin:10px auto; width:200px; text-align:center;">SUBMIT</a>
+<br /><br /></div><!--<input name=""    type="submit" value="Submit"  class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">-->
+	
+    <br />
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div data-role="panel" id="rightpanel2" data-position="right" data-display="push" data-dismissible="true" data-theme="a" class="ui-panel ui-panel-position-right ui-panel-display-push ui-body-a ui-panel-animate ui-panel-closed">
+<ul data-role="listview"><li  data-icon="false"><a href="#">Boxing</a></li><li  data-icon="false">
+<a href="#">MMA</a></li><li  data-icon="false">
+<a href="#">Kick Boxing</a></li><li data-icon="false">
+<a href="#">Team Warfare</a></li><li data-icon="false">
+<a href="#">UFC</a></li><li  data-icon="false">
+<a href="#">Karate</a></li><li  data-icon="false">
+<a href="#">Taekwondo</a></li><li data-icon="false">
+<a href="#">Kung Fu</a></li><li data-icon="false">
+<a href="#">Judo</a></li><li  data-icon="false">
+<a href="#">Jujutsu</a></li><li  data-icon="false">
+<a href="#">Wrestling</a></li><li  data-icon="false">
+<a href="#">Sparring</a></li><li  data-icon="false">
+<a href="#">Open Callout</a></li>
+</ul>
+
+</div>
+
+
+
+
+
+
+<div data-role="footer"  data-tap-toggle="true" data-position="fixed" class="ui-footer ui-bar-a ui-footer-fixed slideup" role="banner" style="height:65px; font-size:27px;  background:#000; ">
+
+
+
+    
+    
+      <!-- url(images/footerbg.png)<div style="width:20%; text-align:center; float:left; padding-top:2px; font-size:12px; background:url(images/footeractive.png) no-repeat center top">
+     
+
+     
+   <a href="#" onClick="courtlink()"><button id="saveFileBtn" data-iconpos="center" data-icon="courts" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>-->
+     
+      <div style="width:25%; text-align:center; float:left; font-size:12px"><a onClick="calloutlink()" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="callout" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+      
+       <div style="width:25%; text-align:center; float:left; font-size:12px"><a href="create.html" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="createactive" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+       
+        <div style="width:25%; text-align:center; float:left; font-size:12px"><a onClick="forumlink()"  target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="forum" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+     
+    
+    <div style="width:25%; text-align:center; float:left; font-size:12px"><a href="settings.html" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="settings" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+    
+    
+    	</div>
+
+
+ 
+</div>
+ 
+<script type="text/javascript" charset="utf-8">
+	//userid,fname,cat,photo,uname,email,pass
+	  
+	
+var select = document.getElementById("selectCat");
+var options = ["Boxing", "MMA", "Kick Boxing", "Team Warfare", "UFC", "Karate","Taekwondo", "Kung Fu", "Judo", "Jujutsu", "Wrestling", "Sparring", "Open Callout"];
+for(var i = 0; i < options.length; i++) {
+    var opt = options[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = i;
+    select.appendChild(el);
+}
+	 	
+	 var AAA = localStorage['mySettings'].split(',');
+     var auserid = AAA[0].split('!!!'); //userid
+	 var afname = AAA[1].split('!!!'); //fname
+	 var acat = AAA[2].split('!!!'); //cat
+	 var afnphoto = AAA[3].split('!!!'); //fnphoto
+	 var auname = AAA[4].split('!!!'); //uname
+	 var aemail = AAA[5].split('!!!'); //uname
+	 
+	
+	/* var userid = auserid[1]; //userid
+	 var fname = afname[1]; //fname
+	 var cat = acat[1]; //cat
+	 var fnphoto = afnphoto[1]; //fnphoto
+	 var uname = auname[1]; //uname*/
+	  
+	document.getElementById("uname2").innerHTML = auname[1];
+    document.getElementById("uname").value = auname[1];
+	document.getElementById('userid').value = auserid[1];
+    
+    if(localStorage['fieldup']!=""){
+    var BBB = localStorage['fieldup'].split(','); //ftrname1+','+ftrname2+','+selectCat+','+callouttext;
+    
+    document.getElementById('ftrname1').value = BBB[0];
+    document.getElementById('ftrname2').value = BBB[1];
+    document.getElementById('selectCat').value = BBB[2];
+    document.getElementById('callouttext').value = BBB[3];
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>stumblelegalapp</title>
+	<link rel="stylesheet" href="themes/fightcallout.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+    
+    <link rel="stylesheet" href="_assets/css/jqm-demos.css">
+
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    
+
+<!--     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="_assets/css/jqm-demos.css">
+	<script src="js/jquery.js"></script>
+	<script src="_assets/js/index.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>-->
+
+	<style>
+        table { width:100%; border-spacing: 0; }
+        th { text-align:left; }
+        th h3 { margin:.6em 0 .6em .5em; }
+        th, td { vertical-align:top; border-top:1px solid #eee; padding: 1px 3px; background-color:#fcfcfc; }
+        td .ui-btn { margin:.4em 0 .5em 0; }
+        td .ui-btn-inner { padding: .4em 15px; }
+		
+		.ui-icon-logo {
+		background-image: url("images/toplogo.png");
+		background-size: 28px 28px; width:15px; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+	}
+	
+	
+	
+	
+	
+	
+	 .ui-btn.ui-icon-courts, .ui-btn.ui-icon-courts:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-courts:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-courts{
+        background-image: url(images/courts.png) !important;
+		background-size: 70px 59px; width:120%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		 .ui-btn.ui-icon-calloutactive, .ui-btn.ui-icon-calloutactive:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-calloutactive:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-calloutactive{
+        background-image: url(images/call-out_active.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		 .ui-btn.ui-icon-callout, .ui-btn.ui-icon-callout:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-callout:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-callout{
+        background-image: url(images/call-out_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+	
+	 .ui-btn.ui-icon-create, .ui-btn.ui-icon-create:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-create:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-create{
+        background-image: url(images/create_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+
+	
+	
+		
+		 .ui-btn.ui-icon-forum, .ui-btn.ui-icon-forum:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-forum:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-forum{
+        background-image: url(images/forum_default.png) !important;
+		background-size: 70px 59px; width:200%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+	
+	
+	 .ui-btn.ui-icon-settings, .ui-btn.ui-icon-settings:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+		background-color: transparent !important;
+
+
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-settings:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-settings{
+        background-image: url(images/settings_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none; 
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+
+
+	
+    </style>
+    
+<script>
+function editbck2()
+{   
+
+var url = window.location.href;
+var params = url.split('?');
+//alert(params[1]);
+var ABC=params[1];
+
+
+var AABBCC = ABC.split('&amp;');
+
+
+var AA = AABBCC[1];
+var AAA = AA.split('=');
+var alphatyp=AAA[1];
+
+
+
+var BB = AABBCC[2];
+var BBB = BB.split('=');
+var alphalvl=BBB[1];
+
+//courts.html?type=Criminal&amp;lvl=Local
+//type.html?lvl=Criminal
+switch(alphatyp){
+case "Family": window.top.location.href = "type3.html"; break;
+case "Environmental": window.top.location.href = "selection.html"; break;
+ 
+}
+//
+if(alphatyp!="Family"&&alphatyp!="Environmental"){
+window.top.location.href = "type.html?lvl="+alphatyp;
+}
+
+}
+
+
+
+
+
+</script>
+
+
+<!--mysettings-->
+     <script src="js/iscriptz-function.js"></script>
+	 
+	 
+
+
+
+<style type="text/css">
+.badge {  background: #BA070F;  color: #fff;  padding: 1px 7px;  position: absolute;  right: 4px;  top: -12px;  z-index: 999;  border-radius: .8em;  border: 2px solid #fff; margin-right:20%; visibility:hidden}
+
+
+/*.post_image_holder {
+box-sizing: content-box;
+display: block;
+padding: 2px;
+width: 32px;
+height: 32px;
+float: left;
+margin: 0 10px 5px 0;
+border: 1px solid #ccc;
+-moz-box-shadow: 1px 1px 1px #ddd;
+-webkit-box-shadow: 1px 1px 1px #ddd;
+box-shadow: 1px 1px 1px #ddd;
+border-radius: 6px;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+background-color: white;
+}*/
+
+.imgecircle{
+border-radius: 50%; 
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%; margin-left:20px;
+border-radius: 50%;
+	}
+
+</style> <script type="text/javascript" charset="utf-8">
+	
+	
+	
+	
+	 //var hostserver= localStorage['globalurl'];
+var hostserver= localStorage['globalurl'];
+    // Wait for PhoneGap to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // PhoneGap is ready
+    //
+    function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
+
+    // onSuccess Geolocation
+    //
+    function onSuccess(position) {
+       /* var element = document.getElementById('geolocation');
+        element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                            'Longitude: '          + position.coords.longitude             + '<br />' +
+                            'Altitude: '           + position.coords.altitude              + '<br />' +
+                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                            'Heading: '            + position.coords.heading               + '<br />' +
+                            'Speed: '              + position.coords.speed                 + '<br />' +
+                            'Timestamp: '          + new Date(position.timestamp)          + '<br />';*/
+		
+	
+	
+	
+	localStorage['mylatKey'] = position.coords.latitude;
+	localStorage['mylongKey2'] = position.coords.longitude;
+							
+	
+	//http://buildwebdesign.com/kryptonite/legalapp/gps.php?id=73&long=123&lat=10
+	
+	var thelatitude  = position.coords.latitude;
+	var thelongitude = position.coords.longitude;
+	
+	var AAA = localStorage['myID2'].split(',');
+	var theid = AAA[1];
+	
+
+	//alert("Hi " + theid+", Your in "+thelongitude+","+thelatitude);
+	//var theid = AAA[1];
+	
+	 
+	
+	 $.post(hostserver+"gps.php",
+  {
+    id:theid,
+	long:thelongitude,
+	lat:thelatitude
+  },
+  function(data,status){
+    if(status=="success"){
+	//window.top.location.href = "form.html"; 
+	}else{
+		alert("Please check your connection and try again");
+		}
+  });
+	 
+	 
+	 
+    }
+
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
+
+</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-tap-toggle="false" data-position="fixed" role="banner" class="ui-header ui-bar-inherit">
+			<div style=" width:100%; height:10px">&nbsp;</div>
+           
+        
+           <a href="#" onclick="editbck2()" data-transition="flip" style="position: fixed; background-image: url('images/toplogo.png');
+		 width:15px;margin-top:13px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-left ui-icon-logo" >&nbsp;</a>
+   
+   
+   
+    <h1 class="ui-title" role="heading" aria-level="1">Open Callout</h1>
+   
+   
+          
+    
+  <a style="margin-top:10px" href="#rightpanel2" data-role="button" data-inline="true" data-mini="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-mini ui-btn-inline ui-btn-hover-c ui-btn-down-c"><span class="ui-btn-inner"><span class="ui-btn-text;" style="font-size:12px">CATEGORIES</span></span></a>
+<!-- <div style="position: fixed;  text-align:right; float:right; width:40%; padding:0px"></div>-->
+ 
+ 
+ 
+<!--  <a href="#" style="position: fixed; background-image: url('images/toplogo.png');
+		 width:15px; margin-right:-10px; margin-top:13px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-right ui-icon-logo">&nbsp;</a>-->
+      
+		
+    
+      <!-- <div style="text-align:right; float:right; width:40%; padding:10px">LATEST</div>  <a href="selection.html" data-transition="flip" style="position: fixed; color:#FFF; background-image: width:15px; margin-right:-10px; margin-top:13px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-right ">&nbsp;</a>-->
+        
+        
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+  
+
+
+
+        
+        
+        
+        
+        
+        
+
+<div data-role="content">   <div style="width:300px; margin: 0 auto;  text-align:center">
+
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                    <input type="radio" name="radio-choice-h-6" id="radio-choice-h-6a" value="on" checked="checked" class="outlineswitch">
+                    
+                     <label for="radio-choice-h-6a" style="background-color:#FFF; border-color:#FFF; color:#F00; box-shadow: none; -webkit-box-shadow: none;">MOST VIEWED</label>
+                    
+                    <label for="radio-choice-h-6b" onClick="calendar()"  style="background-color:#F00; border-color:#FFF; color:#FFF; box-shadow: none; -webkit-box-shadow: none; text-shadow: 0 1px 0 #F00"><a href="#" onClick="calendar()"  target="_parent" style="text-decoration:none">HIGHEST RANK</a></label>
+                    <input type="radio" onClick="calendar()" name="radio-choice-h-6" id="radio-choice-h-6b" value="off" class="outlineswitch">
+                   
+                 </fieldset>
+       
+</div>
+		<div class="content-primary">
+  
+        
+        
+   <ul data-role="listview" data-filter="true" data-theme="d" id="data">   
+   
+   
+   <li style="font-size:12px;" data-icon="true">
+   
+   <div style="float:left; width:15%"><a href="#" target="_parent"><img class="imgecircle" src="images/footeractive.png" width="40px" style="margin-left:-3px"></a></div>
+   <div style="float:left; width:60%">Boxing<br />Adam Call Out Pete<br />100 Views</div>
+   <div style="float:left; width:20%">70%<br />&nbsp;<br />7 min ago</div>
+   
+   </li>
+   
+   
+    <li style="font-size:12px;" data-icon="true">
+   
+   <div style="float:left; width:15%"><a href="#" target="_parent"><img class="imgecircle" src="images/footeractive.png" width="40px" style="margin-left:-3px"></a></div>
+   <div style="float:left; width:60%">Boxing<br />Adam Call Out Tom v Pete<br />100 Views</div>
+   <div style="float:left; width:20%">70%<br />&nbsp;<br />7 min ago</div>
+   
+   </li>
+   
+    <li style="font-size:12px;" data-icon="true">
+   
+   <div style="float:left; width:15%"><a href="#" target="_parent"><img class="imgecircle" src="images/footeractive.png" width="40px" style="margin-left:-3px"></a></div>
+   <div style="float:left; width:60%">Boxing<br />Adam Call Out Andrew<br />100 Views</div>
+   <div style="float:left; width:20%">70%<br />&nbsp;<br />7 min ago</div>
+   
+   </li>
+   
+     
+
+<script type="text/javascript" charset="utf-8">
+
+var url = window.location.href;
+var params = url.split('?');
+var ABC=params[1];
+
+
+var AABBCC = ABC.split('&amp;');
+
+var AA = AABBCC[0];
+var AAA = AA.split('=');
+var alphastart=AAA[1];
+
+var BB = AABBCC[1];
+var BBB = BB.split('=');
+var alphatype=BBB[1];
+
+var CC = AABBCC[2];
+var CCC = CC.split('=');
+var alphalevel=CCC[1];
+
+//alert(allentry+' '+alphatype+' '+alphalevel);
+
+
+switch(alphatype){
+	case "Criminal": 
+	if(alphalevel=="Local"){allentry=localStorage['CRIL']; }
+	if(alphalevel=="District"){allentry=localStorage['CRID']; }
+	if(alphalevel=="Supreme"){allentry=localStorage['CRIS']; }
+	                 break;
+
+	case "Civil": 
+	if(alphalevel=="Local"){allentry=localStorage['CIVL']; }
+	if(alphalevel=="District"){allentry=localStorage['CIVD']; }
+	if(alphalevel=="Supreme"){allentry=localStorage['CIVS']; }
+	                 break;
+
+
+	case "Family": 
+	if(alphalevel=="Family%20Court"){allentry=localStorage['FAML'];}
+	if(alphalevel=="Federal%20Magistrate%20Court"){allentry=localStorage['FAMD'];}
+	if(alphalevel=="Supreme"){allentry=localStorage['FAMS'];}
+	
+
+
+	case "Environmental": 
+	if(alphalevel=="Local"||alphalevel==""){allentry=localStorage['ENVL']; }
+	if(alphalevel=="District"){allentry=localStorage['ENVD']; }
+	if(alphalevel=="Supreme"){allentry=localStorage['ENVS']; }
+	                 break;
+
+
+}
+//////////////////////////////////////////////////////////////////////////////
+
+if(alphatype=="Family"&&alphalevel=="Supreme"){
+var allentry=localStorage['FAMS'];
+//alert(allentry);
+}
+
+//
+	  var arraydataZZ = allentry.split(',');
+	  var globalXX = arraydataZZ.length;
+
+		
+//alert(globalXX);
+///////////////////////////////////////////
+	  
+/*	var alphaz = arraydataZZ[1].charAt(0);
+	var url = window.location.href;
+	
+	var params = url.split('?');
+	//alert(params[1]);
+	var ABC=params[1];
+	
+	var AABBCC = ABC.split('&amp;');
+	
+	var AA = AABBCC[0];
+	var AAA = AA.split('=');
+	var alphastart=AAA[1];*/
+	
+
+
+
+
+ 
+ 
+
+	var arraydatadisply = ''; if(globalXX==2){ alert('no entry found');  }
+	
+	for($i=2;$i<=globalXX;$i++){
+	var arraydataFF = arraydataZZ[$i].split('!!!');
+	  
+	  if(arraydataFF[3]!='null'){
+	  document.write('<li><a href="load-closeby.html?url=courts-list.htmlQQQlong='+arraydataFF[2]+'!!!lat='+arraydataFF[1]+'!!!courtid='+arraydataFF[0]+'!!!courtname='+arraydataFF[3]+'!!!r=1" target="_parent" id="data'+$i+'">'+arraydataFF[3]+'</a></li>');}
+	   }
+		
+		//localStorage['counterz']=0;
+		
+
+		
+ </script>
+ 
+ 
+ 
+ 
+ 
+</ul> 
+ 
+ 
+
+<br style="clear:both">
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div data-role="panel" id="rightpanel2" data-position="right" data-display="push" data-dismissible="true" data-theme="a" class="ui-panel ui-panel-position-right ui-panel-display-push ui-body-a ui-panel-animate ui-panel-closed">
+<ul data-role="listview"><li  data-icon="false"><a href="#">Boxing</a></li><li  data-icon="false">
+<a href="#">MMA</a></li><li  data-icon="false">
+<a href="#">Kick Boxing</a></li><li  data-icon="false">
+<a href="#">Team Warfare</a></li><li  data-icon="false">
+<a href="#">UFC</a></li><li  data-icon="false">
+<a href="#">Karate</a></li><li  data-icon="false">
+<a href="#">Taekwondo</a></li><li  data-icon="false">
+<a href="#">Kung Fu</a></li><li  data-icon="false">
+<a href="#">Judo</a></li><li  data-icon="false">
+<a href="#">Jujutsu</a></li><li  data-icon="false">
+<a href="#">Wrestling</a></li><li  data-icon="false">
+<a href="#">Sparring</a></li><li  data-icon="false">
+<a href="#">Open Callout</a></li  data-icon="false">
+</ul>
+
+</div>
+
+
+
+
+
+
+<div data-role="footer"  data-tap-toggle="true" data-position="fixed" class="ui-footer ui-bar-a ui-footer-fixed slideup" role="banner" style="height:65px; font-size:27px;  background:#000">
+
+
+
+    
+    
+      <!-- url(images/footerbg.png)<div style="width:20%; text-align:center; float:left; padding-top:2px; font-size:12px; background:url(images/footeractive.png) no-repeat center top">
+     
+    
+     
+   <a href="#" onClick="courtlink()"><button id="saveFileBtn" data-iconpos="center" data-icon="courts" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>-->
+     
+      <div style="width:25%; text-align:center; float:left; font-size:12px"><a onClick="calloutlink()" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="calloutactive" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+      
+       <div style="width:25%; text-align:center; float:left; font-size:12px"><a href="create.html" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="create" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+       
+        <div style="width:25%; text-align:center; float:left; font-size:12px"><a onClick="forumlink()"  target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="forum" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+     
+    
+    <div style="width:25%; text-align:center; float:left; font-size:12px"><a href="settings.html" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="settings" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+    
+    
+    	</div>
+
+
+ 
+</div>
+ 
+ <script type="text/javascript" charset="utf-8" src="js/checknew.js"></script>
+
+</body>
+</html>

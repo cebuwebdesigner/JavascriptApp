@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>stumblelegalapp</title>
+	<link rel="stylesheet" href="themes/fightcallout.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+    
+    <link rel="stylesheet" href="_assets/css/jqm-demos.css">
+
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    
+
+<!--     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="_assets/css/jqm-demos.css">
+	<script src="js/jquery.js"></script>
+	<script src="_assets/js/index.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>-->
+
+	<style>
+        table { width:100%; border-spacing: 0; }
+        th { text-align:left; }
+        th h3 { margin:.6em 0 .6em .5em; }
+        th, td { vertical-align:top; border-top:1px solid #eee; padding: 1px 3px; background-color:#fcfcfc; }
+        td .ui-btn { margin:.4em 0 .5em 0; }
+        td .ui-btn-inner { padding: .4em 15px; }
+		
+		.ui-icon-logo {
+		background-image: url("images/toplogo.png");
+		background-size: 28px 28px; width:15px; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+	}
+	
+	
+	
+	
+	
+	
+	 .ui-btn.ui-icon-courts, .ui-btn.ui-icon-courts:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-courts:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-courts{
+        background-image: url(images/courts.png) !important;
+		background-size: 70px 59px; width:120%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		 .ui-btn.ui-icon-calloutactive, .ui-btn.ui-icon-calloutactive:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-calloutactive:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-calloutactive{
+        background-image: url(images/call-out_active.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+		 .ui-btn.ui-icon-callout, .ui-btn.ui-icon-callout:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-callout:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-callout{
+        background-image: url(images/call-out_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+	
+	 .ui-btn.ui-icon-create, .ui-btn.ui-icon-create:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-create:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-create{
+        background-image: url(images/create_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+
+	
+	
+		
+		 .ui-btn.ui-icon-forum, .ui-btn.ui-icon-forum:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-forum:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-forum{
+        background-image: url(images/forum_default.png) !important;
+		background-size: 70px 59px; width:200%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+	
+	
+	
+			 .ui-btn.ui-icon-forumactive, .ui-btn.ui-icon-forumactive:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-forumactive:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-forumactive{
+        background-image: url(images/forum_active.png) !important;
+		background-size: 70px 59px; width:200%; 
+		background-color: transparent !important;
+		border:none;
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+	
+	 .ui-btn.ui-icon-settings, .ui-btn.ui-icon-settings:after
+     {
+        background-repeat: no-repeat !important;
+        /*Remove circle disc*/
+        background-color: rgba(0, 0, 0, 0); !important;
+        background-position: center 0%; !important;
+		background-color: transparent !important;
+
+
+        background-size: 70px 59px;
+    }
+    .ui-btn.ui-icon-settings:hover
+     {
+        background-position: center 0%; !important;
+        background-size: 70px 59px;
+    }
+    .ui-icon-settings{
+        background-image: url(images/settings_default.png) !important;
+		background-size: 70px 59px; width:150%; 
+		background-color: transparent !important;
+		border:none; 
+		background-repeat:no-repeat;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+
+    }
+	
+
+
+	
+    </style>
+    
+
+
+
+<!--mysettings-->
+     <script src="js/iscriptz-function.js"></script>
+	 
+	 
+  <script src="js/iscriptz-globalurl.js"></script>
+
+
+<style type="text/css">
+.badge {  background: #BA070F;  color: #fff;  padding: 1px 7px;  position: absolute;  right: 4px;  top: -12px;  z-index: 999;  border-radius: .8em;  border: 2px solid #fff; margin-right:20%; visibility:hidden}
+
+
+.imgecircle{
+border-radius: 50%; 
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%; margin-left:20px;
+border-radius: 50%;
+	}
+
+</style> <script type="text/javascript" charset="utf-8">
+
+	
+//var hostserver='http://buildwebdesign.com/kryptonite/legalapp/';  
+var hostserver=localStorage['globalurl'];
+
+function addcomment(){
+//alert()
+ var AAA = localStorage['mySettings'].split(',');
+ var auserid = AAA[0].split('!!!'); //
+ var userid = auserid[1];
+ var postid = document.getElementById("postid").value;
+ var comment = document.getElementById("comment").value;
+
+//alert(vname);position:vposition,
+var vdatastore = postid+","+userid+","+comment;
+var dbnstore = "postid,userid,comment";
+
+var vdbtable = "insert,fco_forum";//,unique,2
+
+//alert(vdatastore+'--'+dbnstore+'--'+vdbtable);
+//alert(hostserver);
+
+	
+   $.post(hostserver+"switch.php",
+  {
+    dbtable:vdbtable,
+	datastore:vdatastore,
+	dbnstore:dbnstore
+  },
+  function(data,status){
+	 // alert(data);
+    if(status=="success"){
+    window.top.location.href = 'forum-conversation.html?postid='+postid;
+	}else{
+		alert("Please check your connection and try again");
+		}
+  });
+	
+	
+	
+}
+	
+
+//alert(localStorage['postentrydata']);
+//'username,type,text,fighterA,fighterB,views,percent,date,userid,video,details_date,details_venue,details_broadcast,details_tickets'
+
+//'username,type,text,fighterA,fighterB,views,percent,date,userid,video,details_date,details_venue,details_broadcast,details_tickets';localStorage['postentrydata']
+    
+</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-tap-toggle="false" data-position="fixed" role="banner" class="ui-header ui-bar-inherit">
+			<div style=" width:100%; height:10px">&nbsp;</div>
+           
+        
+           <a href="#" onclick="editbck2()" data-transition="flip" style="position: fixed; background-image: url('images/toplogo.png');
+		 width:15px;margin-top:13px" class="ui-btn ui-nodisc-icon ui-corner-all ui-btn-icon-left ui-icon-logo" >&nbsp;</a>
+
+   
+   
+    <h1 class="ui-title" role="heading" aria-level="1">Fight Call Out</h1>
+   
+   
+          
+
+        
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+  
+
+
+
+        
+        
+        
+        
+        
+        
+
+<div data-role="content">  
+
+       <div class="content-primary">
+    
+           
+           
+          <div style="position:fixed; top:55px; width:88%; margin-left:-8%; padding:2% 10% 2% 10%; background-color:RED; z-index:33">
+      
+           <div style="text-align:center; width:100%"><img class="imgecircle" src="images/box.jpg" width="140px" /></div>
+    <div style="font-size:15px; width:100%" >
+   <div style="float:left; width:15%"><a href="#" target="_parent"><img class="imgecircle" src="images/footeractive.png" width="40px" style="margin-left:-3px"></a></div>
+   <div style="float:left; width:60%" id="titleoffight" name="titleoffight"><script>
+       
+       var arraysplit = localStorage['postentrydata'];
+var AAA = arraysplit.split(',');
+
+var twosplitA = AAA[3];var twosplitB = AAA[4];var twosplitC = AAA[7];
+var fighterA = twosplitA.split('!!!');
+var fighterB = twosplitB.split('!!!');
+var fighterC = twosplitC.split('!!!');
+var dataview  = fighterA[1]+' VS '+fighterB[1]+'<br />'+fighterC[1];
+document.write(dataview);
+       
+       </script></div>
+   </div>
+           </div>
+           
+           
+           
+   
+        <br style="clear:both" />&nbsp;<br style="clear:both" />&nbsp;<br style="clear:both" />&nbsp;<br style="clear:both" />&nbsp;<br style="clear:both" />&nbsp;<br style="clear:both" />&nbsp;<br style="clear:both" />&nbsp;<br style="clear:both" />&nbsp;<br style="clear:both" />&nbsp;<br style="clear:both" />
+        
+   <!--<ul data-role="listview" data-theme="d" id="data" style="width:80%; margin-left:20%; z-index:22">   
+   
+   
+   <li style="font-size:12px;" data-icon="true">
+   
+   <div style="float:left; width:20%"><a href="#" target="_parent"><img class="imgecircle" src="images/footeractive.png" width="40px" style="margin-left:-3px"></a></div>
+   <div style="float:left; width:60%">ANNA<br />Fight fight fight...<br />dd/mm/yy time</div>
+   
+   </li>
+   
+   
+    <li style="font-size:12px;" data-icon="true">
+   
+   <div style="float:left; width:20%"><a href="#" target="_parent"><img class="imgecircle" src="images/footeractive.png" width="40px" style="margin-left:-3px"></a></div>
+   <div style="float:left; width:60%">JUAN<br />Cool match<br />dd/mm/yy time</div>
+   
+   
+   </li>
+   
+    <li style="font-size:12px;" data-icon="true">
+   
+   <div style="float:left; width:20%"><a href="#" target="_parent"><img class="imgecircle" src="images/footeractive.png" width="40px" style="margin-left:-3px"></a></div>
+   <div style="float:left; width:60%">ZACH<br />yeah!!!<br />dd/mm/yy time</div>
+  
+   
+   </li>
+   
+     
+
+ 
+</ul> -->
+           
+  <ul data-role="listview" data-theme="d" id="data" style="width:95%; margin-left:15%; z-index:22">   
+   
+        
+   
+<script type="text/javascript">
+var postlist = localStorage['forumarraydata'];
+var postarraylist = postlist.split(",");
+var postcount = postarraylist.length; postcount--;
+
+    
+/*$datastore = 
+$datastore.$row["userid"].'!!!
+'.$row["fname"].'!!!
+'.$row["cat"].'!!!
+'.$row["type"].'!!!
+'.$row["photo"].'!!!
+'.$row["email"].'!!!
+'.$row["uname"].',';*/
+var datamembers = localStorage['memberarraydata'].split(','); 
+    
+var membercount =  datamembers.length; membercount--;
+    //alert(datamembers[1]);
+for(i=0;i<=postcount;i++){
+   
+   var postarrayinfo = postarraylist[i].split("!!!");
+   var ctype = postarrayinfo[0];
+   var ctitle = postarrayinfo[1];
+   var cago = postarrayinfo[2];
+   var cuserimg;
+
+for(i2=0;i2<=membercount;i2++){
+var arraythis = datamembers[i2];
+var memarrayinfo = datamembers[i2].split("!!!"); 
+if(memarrayinfo[0]==ctype){ctype=memarrayinfo[1];}
+} 
+   
+    
+document.write('<li class="ui-nodisc-icon"><a href="#" target="_parent" style="font-size:12px; text-decoration:none; color:#000"><div style="float:left; width:15%"><img class="imgecircle" src="'+cuserimg+'" width="40px" style="margin-left:-3px"></div><div style="float:left; width:60%">'+ctype+'<br />'+ctitle+'<br />'+cago+'</div><div style="float:left; width:20%"></div></a></li>');
+}
+
+</script>
+    
+</ul>  
+ 
+ 
+
+<br style="clear:both"><br style="clear:both"><br style="clear:both">
+
+</div>
+
+
+
+<div style="position:fixed; bottom:60px; width:88%; margin-left:-8%; padding:2% 10% 2% 10%; background-color:#333">
+
+<div style="width:65%; float:left;" >
+<input type="hidden" name="postid" id="postid" />
+<textarea data-role="none" name="comment"  id="comment" style="width:95%; font-size:11px"></textarea>
+</div> 
+ <div style="width:35%; float:left" >&nbsp;<br />
+<a data-role="button" style="margin-top:-20px; font-size:13px" onclick="addcomment()">Comment</a> 
+</div></div>
+
+</div>
+
+
+
+
+
+<div data-role="footer"  data-tap-toggle="true" data-position="fixed" class="ui-footer ui-bar-a ui-footer-fixed slideup" role="banner" style="height:65px; font-size:27px;  background:#000; position:fixed;">
+
+
+
+
+
+   
+      <!-- url(images/footerbg.png)<div style="width:20%; text-align:center; float:left; padding-top:2px; font-size:12px; background:url(images/footeractive.png) no-repeat center top">
+     
+    
+     
+   <a href="#" onClick="courtlink()"><button id="saveFileBtn" data-iconpos="center" data-icon="courts" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>-->
+     
+      <div style="width:25%; text-align:center; float:left; font-size:12px"><a onClick="calloutlink()" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="callout" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+      
+       <div style="width:25%; text-align:center; float:left; font-size:12px"><a href="create.html" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="create" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+       
+        <div style="width:25%; text-align:center; float:left; font-size:12px"><a onClick="forumlink()"  target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="forumactive" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+     
+    
+    <div style="width:25%; text-align:center; float:left; font-size:12px"><a href="settings.html" target="_parent"><button id="saveFileBtn" data-iconpos="center" data-icon="settings" style="font-size:27px; margin-top:1px"><br />&nbsp;<br />&nbsp;<br /></button></a></div>
+    
+    
+    	</div>
+
+
+ 
+</div>
+ 
+ <script type="text/javascript" charset="utf-8">
+	//userid,fname,cat,photo,uname,email,pass
+    var url = window.location.href;
+	var params = url.split('=');
+	//var ABC=params[1];
+	//var AAA = ABC.split('=');
+	 document.getElementById('postid').value = params[1];
+	 
+</script>
+</body>
+</html>
